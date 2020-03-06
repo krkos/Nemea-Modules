@@ -1,0 +1,46 @@
+.TH TRAFFIC_REPEATER "1" "March 2020" "2.13.1 traffic_repeater" "User Commands"
+.SH NAME
+traffic_repeater \- manual page for traffic_repeater 2.13.1
+.SH SYNOPSIS
+.B traffic_repeater
+[\fICOMMON\fR]... [\fIOPTIONS\fR]...
+.SH DESCRIPTION
+.TP
+Number of Input IFC: \fB1\fR
+..
+.TP
+Number of Output IFC: \fB1\fR
+..
+.TP
+This module receive data from input interface and resend it to the output interface based on given arguments in -i option.
+.HP
+.SH COMMON OPTIONS:
+.TP
+\fB\-h\fR \fB[trap,1]\fR
+If no argument, print this message. If \fItrap\fR or 1 is given, print TRAP help.
+.TP
+\fB\-i\fR \fBIFC_SPEC\fR
+Specification of interface types and their parameters, see \fI\-h trap\fR (mandatory parameter).
+.TP
+\fB\-v\fR
+Be verbose.
+.TP
+\fB\-vv\fR
+Be more verbose.
+.TP
+\fB\-vvv\fR
+Be even more verbose.
+.SH ENVIRONMENT VARIABLES
+.TP
+\fBPAGER\fR
+Show the help output in the set \fBPAGER\fR.
+.TP
+\fBLIBTRAP_OUTPUT_FORMAT\fR
+If set to \fIjson\fR, information about module is printed in JSON format.
+.TP
+\fBTRAP_SOCKET_DIR\fR
+Redefines directory for UNIX sockets.
+.SH BUGS
+Please send problems, bugs, questions, desirable enhancements, patches etc. to:
+\fInemea@cesnet.cz\fR
+

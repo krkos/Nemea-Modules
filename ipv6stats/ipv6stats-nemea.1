@@ -1,0 +1,64 @@
+.TH IPV6 STATISTICS MODULE "1" "March 2020" "2.13.1 IPv6 Statistics module" "User Commands"
+.SH NAME
+IPv6 Statistics module \- manual page for IPv6 Statistics module 2.13.1
+.SH SYNOPSIS
+.B ipv6 statistics module
+[\fICOMMON\fR]... [\fIOPTIONS\fR]...
+.SH DESCRIPTION
+.TP
+Number of Input IFC: \fB1\fR
+..
+.TP
+Number of Output IFC: \fB0\fR
+..
+.TP
+Module for calculating various IPv6 statistics.
+.HP
+\fB\-l\fR, \fB\-\-length_long\fR
+Length of long window (in seconds
+.TP
+\fB\-n\fR, \fB\-\-no_last\fR
+For not printing statistics from last (incomplete) window. Last window statistics print by default.
+.TP
+\fB\-p\fR, \fB\-\-packets\fR
+Number of packets
+.TP
+\fB\-d\fR, \fB\-\-dir\fR
+Path to output files (have to be ended by /
+.TP
+\fB\-s\fR, \fB\-\-length_small\fR
+Length of small window (in seconds
+.TP
+\fB\-L\fR, \fB\-\-length_multi\fR
+Set length of long window by multiple of small window (default 12).
+.TP
+.SH COMMON OPTIONS:
+.TP
+\fB\-h\fR \fB[trap,1]\fR
+If no argument, print this message. If \fItrap\fR or 1 is given, print TRAP help.
+.TP
+\fB\-i\fR \fBIFC_SPEC\fR
+Specification of interface types and their parameters, see \fI\-h trap\fR (mandatory parameter).
+.TP
+\fB\-v\fR
+Be verbose.
+.TP
+\fB\-vv\fR
+Be more verbose.
+.TP
+\fB\-vvv\fR
+Be even more verbose.
+.SH ENVIRONMENT VARIABLES
+.TP
+\fBPAGER\fR
+Show the help output in the set \fBPAGER\fR.
+.TP
+\fBLIBTRAP_OUTPUT_FORMAT\fR
+If set to \fIjson\fR, information about module is printed in JSON format.
+.TP
+\fBTRAP_SOCKET_DIR\fR
+Redefines directory for UNIX sockets.
+.SH BUGS
+Please send problems, bugs, questions, desirable enhancements, patches etc. to:
+\fInemea@cesnet.cz\fR
+

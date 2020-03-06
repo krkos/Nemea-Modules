@@ -1,0 +1,405 @@
+2020-01-31 nemea-modules-2.13.1
+	* Bugfixes in build configuration and tests
+
+2020-01-30 nemea-modules-2.13.0
+	* unirecfilter: fixed typo in message
+	* luamodule: new features del(), ur_type(), ur_drop()
+
+2019-09-02 nemea-modules-2.12.0
+	* Added new luamodule
+	* Simplified logger
+	* Rewritten merger to use pthread instead of openmp
+	* Fixed IDEA format of blacklist2idea
+	* Fixed doc of prefix_tags
+	* Removed debug output of munin modules
+
+2019-05-24 nemea-modules-2.11.1
+	* Removed old python3.4 version from spec file
+	* Doc update by Ulrik
+
+2019-04-21 nemea-modules-2.11.0
+	* merger:
+		New simplified version based on pthread for openwrt.
+	* flow_meter:
+		Updated test references because of MAC UniRec type conversion.
+	* flow_meter&ipfixprobe:
+		Improved build - linker parameters.
+	* aggregator:
+		Fixed build.
+	* logger:
+		Moved translation code into UniRec API.
+	* warden_filer:
+		New wrapper for warden filer that reads namespace from
+		reporters config.
+	* prefix_tags:
+		Fixed build.
+	* idea2idea:
+		Bugfix undefined reference.
+	* csv2nf:
+		MAC address support.
+	* proto_traffic:
+		Extended statistic of proto_traffic by SCTP.
+
+2019-03-21 nemea-modules-2.10.2
+	* report2idea:
+		Renamed reporting modules because of namespace feature.
+		Bugfixes of tests.
+
+2019-03-06 nemea-modules-2.10.1
+	* blacklist2idea:
+		Fixed IDEA format of amplification2idea.
+	* amplification2idea:
+		Fixed IDEA format of amplification2idea.
+	* report2idea:
+		Cleanup - deleted ipblacklist2idea.
+2019-02-25 nemea-modules-2.10.0
+	* hoststats2idea:
+		Fixed format of IDEA messages - Description/Note.
+	* prefix_tags:
+		Fixed compilation&linkage.
+	* rpm:
+		Add ipfixprobe module, the simplified flow_meter.
+
+2019-02-06 nemea-modules-2.9.0
+	* prefix_tags:
+		Add new module to add a label into flow records according to
+		prefix
+	* report2idea:
+		Bugfix in tests which were not performing at all.
+	* blacklist2idea:
+		Bugfix in config loading when the file does not contain
+		blacklists.
+	* sipbf2idea:
+		Improved alert format according to feedback from warden-info.
+	* bloom_history:
+		Add new module that stores observed IPs into a bloom filter to
+		be checked afterwards.
+	* logger-csv2nf:
+		Improved header parsing in csv2nf.sh to find columns
+		automatically.
+	* merger:
+		Doc update.
+
+2018-10-09 nemea-modules-2.8.2
+	* blacklist2idea:
+		Change alert format for blacklistfilter - all IPs are in Source.
+		Source code refactoring.
+		Change format of config file - IDEA Category is a part of the config.
+	* json_dump.py:
+		Updated documentation.
+	* json_replay:
+		Updated documentation.
+	* logreplay:
+		FIx termination of logreplay module.
+	* logger:
+		Fix temination of logger module.
+2018-09-26 nemea-modules-2.8.1
+	* ddos_detector2idea:
+		Fixed AltNames attribute in ddos_detector2idea.
+	* blacklist2idea:
+		Add new category of blacklists of cryptominers.
+
+2018-09-18 nemea-modules-2.8.0
+	* blacklist2idea:
+		Change format that is expected by ipblacklist2idea.py
+		Improved content of IP blacklist alerts
+		Add urlblacklist2idea.py module to convert output of URL blacklist filter into alerts
+	* blooming_history:
+		Use new API endpoint for bloom filter upload (#87)
+		Maintenance of source codes variable reuse (#90)
+	* agg:
+		Bugfixes
+		Updated doc
+	* unirecfilter:
+		Add subnets feature to unirecfilter.
+		Fix stopping the module on parsing/syntax error in unirecfilter.
+	* natpair:
+		Documentation
+		Bugfixes
+	* flow_meter:
+		Change HTTP template: compatibility with CESNET/FlowMon settings
+
+2018-08-03 nemea-modules-2.7.1
+	* Add module blooming_history.
+2018-07-30 nemea-modules-2.7.0
+	Bugfixes in unirecfilter.
+	Bugfixes in anonymizer.
+	Add feature flush output to json_dump.
+	Bugfixes in json_dump.
+	Enabled help string for python modules.
+	Add module pdns_exporter.
+
+2018-07-19 nemea-modules-2.6.4
+	* unirecfilter:
+		added feature of comparison timestamps
+		bugfixes
+	* natpair:
+		bugfixes, discovered by coverity
+	* report2idea:
+		changed "dns" to "domain"
+
+2018-04-13 Nemea-modules-2.6.3
+	* email_reporter:
+		field names are sorted from longest to shortest
+	* aggregator:
+		faster unordered map implementation
+
+2018-03-20 Nemea-modules-2.6.2
+	* added new modules: 
+		Natpair, Mux, Demux, Aggregator (old renamed to
+		scalar-aggregator)
+	* flow_meter:
+		added export of DNS PTR
+		added SMTP plugin
+		modified some test scripts
+	* logger:
+		added script for converting CSV to human readable format
+	* logreplay:
+		implemented delays according to time column, can be disabled
+		bugfix with Ctrl+C not terminating module
+
+2017-11-28 Nemea-modules-2.6.1
+	* vportscan2idea: adapt to the new output of aggregator
+
+2017-10-10 Nemea-modules-2.6.0
+	* added new module:
+		ipv6stats (for counting statistics about IPv4 and IPv6 traffic)
+	* report2idea:
+		ipblacklist: skip message when no threshold reached
+
+2017-09-23 Nemea-modules-2.5.9
+	* report2idea:
+		ipblacklist, haddrscan: changed format
+		
+2017-08-21 Nemea-modules-2.5.8
+	* link_traffic:
+		changed datatype of link_conf_t color
+		added possibility to use comments in configuration file
+		updated README.md
+		bugfixes
+
+	* report2idea:
+		test: BUGFIX different behaviour of awk asort()
+		blacklist: removed PalevoTracker
+
+	* unirecfilter:
+		do not assume double quotes around IPv6 addresses
+
+	* removed CFLAGS/CXXFLAGS/LDFLAGS setting in libtrap check macro
+	* add libpcap-dev, use disabled repobuild by default
+	* ignore build artefacts
+
+2017-07-24 Nemea-modules-2.5.7
+	* link_traffic:
+		new configuration file with lines
+		JSON conversion script
+		bugfixes
+	* topn:
+		bugfixes
+	* unirecfilter:
+		bugfixes
+	* traffic_repeater:
+		code refactoring
+	* flow_meter:
+		long IPFIX option (by Ulrik Haugen)
+		file attributes in spec (by Ulrik Haugen)
+
+2017-07-11 Nemea-modules-2.5.6
+	* flow_meter: 
+		fix build with older gcc
+	* report2idea: 
+		* ipblacklist: added ransomware tracker
+		* sipbf2idea: added testcases, added tcp/udp protocol into the
+		              message
+
+2017-06-30 Nemea-modules-2.5.5
+        * report2idea:
+		uses new version with config
+		venom2idea: Fixed test.sh
+	* flow_meter:
+		parser is now parsing packets without transport layer
+	* link_traffic:
+		config parser + data saving
+
+2017-06-08 Nemea-modules-2.5.4
+	* report2idea:
+		added ddos reporter
+		venom2idea: BUGFIX invalid JSON in config.cfg
+	* flow_meter:
+		flow cache hash function changed to xxHash
+		added handler for SIGPIPE signal 
+		add support for IPv6 address in -x parameter
+		added export to IPFIX
+		optimizations
+		simplifications
+		bugfixes
+	
+2017-03-01 Nemea-modules-2.5.3
+	* anonymizer:
+		added possibility to anonymize IP adresses (IPv4, IPv6) 
+		in string representations in dynamic fields
+	* flow_meter:
+		added -O option (see documentation)
+		bash completion feature
+		BUGFIX distcheck failed
+		added traffic filtering using -F parameter
+		default timeout on output interfaces set to HALF_WAIT
+		fixed exporting expired flows while no packets are captured
+		added output unirec field description to README
+	* topn:
+		add new module for TOP-n stats computation
+	* improved manual pages generation
+	* report2idea:
+		added reporter venom2idea
+		removed booterfilter
+		fixed paths in tests
+	* some other minor bugfixes and optimizations
+
+2017-02-05 Nemea-modules-2.5.2
+	* added aggregator with liburfilter (by Miroslav Kalina)
+	* changed unirecfilter to link liburfilter (by Miroslav Kalina)
+	* added nfwriter (by Jiri Havranek)
+		the module receives UniRec and stores nfdump files
+	* removed libnfdump dependency from source codes
+	* flow_meter:
+		add support: IPv6 extension headers
+		add support: double tagged frames (VLAN)
+		optimizations
+		bugfixes
+
+2017-01-11 Nemea-modules-2.5.1
+	* unirecfilter:
+		fixes of the PROTOCOL field - allow numbers
+		allow negative float numbers
+		checking IP addresses
+		allow apostrophe
+	* link_traffic:
+		add new module (experimental), can export data into munin
+
+2016-10-07 Nemea-modules-2.5.0
+	* report2idea:
+		haddrscan2idea and sipbf2idea now also exports SRC and DST ports
+	* logger:
+		removed OpenMP dependency
+	* flow_meter
+		extended tests coverage
+		updated README
+		many bugfixes and overall improvements
+	* nfreader:
+		fixed ipv6 export in version with libnf
+	* nfwriter
+		new module - reads flows from input interface and write them to nfdump file
+	* endiverter
+		minor improvements
+
+2016-10-07 Nemea-modules-2.4.3
+	* added sipbf2idea reporter
+
+2016-10-04 Nemea-modules-2.4.2
+	* flow_meter:
+		added arp plugin
+		bugfixes in http and ntp plugin
+	* other bugfixes
+
+2016-08-05 Nemea-modules-2.4.1
+	* package:
+		fixed dependencies (remove nemea-py*)
+	* flow_meter:
+		code revision
+		memory optimizations
+		fixing byte order issues
+	* endiverter:
+		coding style
+		bugfixes
+
+2016-07-28 Nemea-modules-2.4.0
+	* report2idea modules:
+		replaced python wrapper with pytrap
+	* miner_detector:
+		add reporter module
+	* json_dump, json_replay:
+		replaced python wrapper with pytrap
+	* flow_meter:
+		optimization and improvement
+		add NTP plugin
+	* endiverter:
+		add converter of UniRec message from OpenWRT
+	* email_reporter:
+		replaced python wrapper with pytrap
+	* device_classifier:
+		add beta version of module
+		installation must be fixed
+	* debug_sender:
+		replaced python wrapper with pytrap
+
+2016-06-03 Nemea-modules-2.3.6
+        * logger:
+		improved error messages
+		changed order of functions during initialization
+	* bruteforce2idea:
+		bugfix
+	* amplification2idea.py:
+		added "Source.Type"="Backscatter"
+
+2016-04-14 Nemea-modules-2.3.5
+        * nfdump_reader: 
+		fixed timestamps when libnf is used
+	* Anonymizer: 
+		removed progress printing, disabled strict-aliasing
+
+
+2016-04-03 Nemea-modules-2.3.4
+        * report2idea dnstunnel bugfixed
+	* flow_meter bugfixed
+
+
+2016-03-20 Nemea-modules-2.3.3
+        * flow_meter sip plugin bugfixed - no longer causes segfault
+	* many smaller bugfixes
+
+
+2016-03-16 Nemea-modules-2.3.2
+        * debug_sender can now be installed properly
+	* added install README for:
+		nfreader
+		email_reporter
+		debug_sender
+		merger
+
+2016-03-14 Nemea-modules-2.3.1
+        * Added modules:
+		reporter for brute_force_detector
+        * bugfixes
+
+2016-03-10 Nemea-modules-2.3
+        * Added modules:
+		reporter for ipblacklistfilter
+	* documentation for creating flow_meter plugins
+	* bugfixes
+
+
+2016-02-28 Nemea-modules-2.2
+	* Added modules:
+		reporters to idea
+		email_reporter
+		json_dump
+		json_replay
+	* added test of repoeters
+	* bugfixes
+
+
+2016-02-16 Nemea-modules-2.1
+
+	* Contained modules:
+		anonymizer
+		debug_sender
+		flow_meter
+		flowcounter
+		logger
+		logreplay
+		merger
+		nfreader
+		report2idea
+		traffic_repeater
+		unirecfilter
+

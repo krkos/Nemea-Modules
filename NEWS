@@ -1,0 +1,168 @@
+2020-01-31 (Tomáš Čejka): rpm: fixed spec - replace provides with requires
+2020-01-30 (Tomas Cejka): config: optional lua
+2020-01-30 (Tomas Cejka): travis: remove lua and add verbosity to configure
+2020-01-30 (Tomas Cejka): travis: add sudo to install py modules
+2020-01-30 (Tomas Cejka): travis: debug python3
+2020-01-30 (Tomáš Čejka): travis: move to py3 in before_install
+2020-01-30 (Tomáš Čejka): travis: debugging build
+2020-01-30 (Tomáš Čejka): travis: add missing python3-pip
+2020-01-30 (Tomáš Čejka): travis: debugging build
+2020-01-30 (Tomáš Čejka): travis: add lua interpreter package
+2020-01-30 (Tomáš Čejka): travis: lua: replace version to 5.2 trusty
+2020-01-30 (Tomáš Čejka): build: lua checking, report2idea print log on error
+2020-01-30 (Tomáš Čejka): travis: update python version
+2020-01-30 (Tomáš Čejka): report2idea: fix tests in py3 + fedora
+2020-01-30 (Tomáš Čejka): revert changes from 3d87d7036, fixed python files
+
+2019-11-24 (Tomáš Čejka): unirecfilter: fixed typo
+2019-09-30 (Jiri Havranek): luamodule: added restrictions to ur_id and ur_drop functions
+2019-09-30 (Jiri Havranek): luamodule: fixed tests
+2019-09-30 (Jiri Havranek): luamodule: added ur_drop() function to drop currently processed unirec message
+2019-09-30 (Jiri Havranek): luamodule: ur_type() now returns table with field name and field type pairs
+2019-09-30 (Jiri Havranek): luamodule: del() function now deletes all fields from template
+2019-09-30 (Jiri Havranek): luamodule: added description of allowed API calls in on_* functions
+
+2019-09-02 (Tomas Cejka): rpm: require lua dependency and update %files in spec
+2019-09-02 (Tomas Cejka): luamodule: changed dependency names
+2019-08-27 (Jiri Havranek): luamodule: updated README.md
+2019-08-27 (Jiri Havranek): luamodule: added ringbuffer as storage for IP addresses exposed to LUA as lightuserdata
+2019-08-27 (Jiri Havranek): luamodule: added ur_id LUA API function
+2019-08-27 (Jiri Havranek): luamodule: added luamodule masking and stats test
+2019-08-27 (Jiri Havranek): luamodule: fixed conversion of IP address from lua to C
+2019-08-27 (Jiri Havranek): luamodule: added recommendation for IP addresses comparsion
+2019-08-27 (Jiri Havranek): luamodule: optimized IP address masking
+2019-08-27 (Tomas Cejka): munin: link&proto traffic: remove debug output
+2019-08-26 (Jiri Havranek): luamodule: added lua 5.1 compatibility for some missing functions
+2019-08-23 (Tomas Cejka): merger: fixed distcheck - subdirs order&clean files
+2019-08-19 (Jiri Havranek): luamodule: added documentation of LUA API to README.md
+2019-08-19 (Jiri Havranek): luamodule: added module for manipulation with unirec record using LUA script
+2019-08-13 (Tomas Cejka): merger: update help for --unirec
+2019-08-13 (Tomas Cejka): merger: user-defined output template
+2019-08-12 (Tomas Cejka): merger: Minor changes
+2019-07-29 (Tomas Cejka): blacklist2idea: fixed nonvalid representation of Hostname and URL
+2019-07-26 (Tomas Cejka): prefix_tags: Fixed doc and add messages about config errors
+2019-07-05 (Tomas Cejka): report2idea: example of subnet filter
+2019-05-24 (Petr Miculek): Simplified logger to a single input interface, -o parameter marked unsupported, as it has currently no influence on the output.
+
+2019-05-24 (Tomas Cejka): rpm: removed old version of py3 from spec
+2019-05-07 (Ulrik Haugen): Update merger readme
+
+2019-04-18 (Tomas Cejka): merger: test: add cleanup
+2019-04-18 (Tomas Cejka): merger: tests: add files into dist
+2019-04-18 (Tomas Cejka): merger: add test for checking output data
+2019-04-18 (Tomas Cejka): merger: BUGFIX do not stop the whole module when a thread finishes
+2019-04-18 (Tomas Cejka): merger: check return value of allocation functions
+2019-04-18 (Tomas Cejka): merger: finished TODOs, added error messages
+2019-04-12 (Tomas Cejka): flow_meter: update test references - MAC address representation
+2019-04-12 (Tomas Cejka): flow_meter&ipfixprobe: improved solution of linker parameters
+2019-04-12 (Tomas Cejka): aggregator: fixed build as a nemea/ submodule
+2019-04-11 (Tomas Cejka): merger: fixed non-complient syntax
+2019-04-10 (Tomas Cejka): merger: new version of simplified merger without openmp
+2019-04-08 (Tomas Cejka): logger: moved source code for conversion to CSV into UniRec
+2019-04-03 (Tomas Cejka): warden_filer: ímproved according to review by @vaclavbartos
+2019-03-27 (Tomas Cejka): report2idea: warden_filer wrapper
+2019-03-22 (Pavel Valach): prefix_tags: add libtrap as a linker dependency
+2019-03-22 (Tomas Cejka): report2idea: updated config.yml.example
+2019-03-22 (Tomas Cejka): idea2idea: BUGFIX bad constant name
+2018-12-23 (Tomas Cejka): csv2nf: MAC addresses support
+2018-12-23 (Tomas Cejka): proto_traffic: add SCTP statistic
+
+2019-03-21 (Tomas Cejka): report2idea: BUGFIX split IDEA to sort all parts, delete array after usage
+2019-03-19 (Tomas Cejka): report2idea: rename reporters
+2019-03-07 (Tomas Cejka): build: update Makefile.am for logger&topn - enforce C std
+
+2019-03-06 (Tomas Cejka): blacklist2idea: improved URL/domain name description
+2019-03-06 (Tomas Cejka): blacklist2idea: BUGFIX bad reference to attribute
+2019-03-05 (Tomas Cejka): blacklist2idea: updated test
+2019-03-05 (Tomas Cejka): blacklist2idea: changed IDEA format - Description/Note
+2019-03-05 (Filip Suster): report2idea: delete old ipblacklist files
+2019-03-05 (Petr Velan): Type moved under Node in amplification2idea
+2019-03-01 (Tomas Cejka): merger: MAINTENANCE update output message replace "trap_get_data()"
+
+2019-02-25 (Václav Bartoš): hoststats2idea: Added comments to unused event type codes
+2019-02-25 (Tomas Cejka): hoststats2idea: changed Note and Description, disable verbose by default
+2019-02-19 (Tomas Cejka): prefix_tags: test: HOTFIX add missing linker flags -lunirec
+2018-12-23 (Tomas Cejka): rpm: add ipfixprobe module
+2018-12-23 (Tomas Cejka): configure: backup and restore LIBS
+2018-12-23 (Tomas Cejka): flow_meter: ipfixprobe without libtrap dependency
+
+2019-02-05 (Tomas Cejka): prefix_tags: test: remove debug CFLAGS options because of linking issues
+2019-02-05 (Tomas Cejka): blacklist2idea: test: updated expected output, pass path to config file
+2019-02-05 (Tomas Cejka): report2idea: FEATURE improved test script - allow additional arguments
+2019-02-05 (Tomas Cejka): blacklist2idea: BUGFIX failure on "empty" config file
+2019-02-05 (Tomas Cejka): report2idea: tests: BUGFIX improved json_cleanup function
+2019-02-05 (Tomas Cejka): report2idea: tests: update expected output data
+2019-02-05 (Tomas Cejka): report2idea: BUGFIX fixed for loop in awk - missing arg
+2019-02-05 (Tomas Cejka): sipbf2idea: update test - expected output
+2019-02-04 (Tomas Cejka): sipbf2idea: changed Description and SIP URI moved into Note
+2019-01-18 (Filip Krestan): bloom_history&prefix_tags: fix coding style
+2019-01-18 (Filip Krestan): Add tests to prefix_tags module
+2019-01-15 (Filip Krestan): Remove unused tests from bloom_history
+2019-01-15 (Tomas Cejka): bloom_history: BUGFIX enabled test as noinst_
+2019-01-15 (Tomas Cejka): bloom_history&prefix_tags: BUGFIX use jansson from libtrap
+2019-01-15 (Tomas Cejka): bloom_history: BUGFIX add header files to dist
+2019-01-15 (Filip Krestan): Rename blooming_history to bloom_history
+2019-01-15 (Filip Krestan): Add prefix_tags module
+2018-11-02 (Tomas Cejka): logger: improved converter csv2nf.sh to parse header and find columns
+2018-10-30 (Ulrik Haugen): Tune mailreporter recipients handling
+2018-10-14 (Jiri Havranek): report2idea: fixed config.yml.example
+2018-10-12 (Jiri Havranek): merger: updated README.md and fixed template format
+2018-10-11 (Ulrik Haugen): Add resolver module
+2018-10-11 (Ulrik Haugen): Fix typos, recode, fold long lines and add whitespace
+
+2018-10-09 (Filip Šuster): Blacklist2idea: Universal reporter (#104)
+2018-10-04 (Jaroslav Hlavac): json_dump.py: added README
+2018-10-04 (Jaroslav Hlavac): json_replay: added README
+2018-09-30 (Tomáš Jánský): logreplay: fixed bug when logreplay did not terminate (#99)
+2018-09-30 (Tomáš Jánský): logger: fixed bug when logger did not terminate (#98)
+2018-09-27 (Ulrik Haugen): Tweak logreplay strings and documentation
+
+2018-09-26 (Tomas Cejka): ddos_detector2idea: bugfix convert altname to str from int
+2018-09-26 (Filip Šuster): blacklist2idea: Add cryptominer category, code cleanup (#94)
+2018-09-19 (Tomas Cejka): rpm: add new (blacklistfilter) modules into package
+
+2018-09-18 (Tomas Cejka): blacklist2idea: add url blacklist reports, improved ip blacklist reports  (#93)
+2018-09-17 (Filip Křesťan): blooming_history: maintenance variable reuse (#90)
+2018-09-17 (Filip Šuster): [flow_meter] Fix exported HTTP field names (#91)
+2018-09-11 (Tomas Jansky): blooming_history: fixed failing repobuild due to missing linker dependencies
+2018-09-03 (Tomas Cejka): agg: readme: fixed typo + updated link to web
+2018-08-31 (Filip Křesťan): blooming_history: Use new API endpoint for bloom filter upload (#87)
+2018-08-31 (Vaclav Bartos): urfilter: fixed IPv6 prefix parsing
+2018-08-31 (Tomas Cejka): fixup! urfilter: FEATURE subnets in IP comparison
+2018-08-31 (Tomas Cejka): urfilter: subnets: updated README
+2018-08-31 (Tomas Cejka): urfilter: FEATURE subnets in IP comparison
+2018-08-31 (Tomas Cejka): urfilter: BUGFIX stop on parsing error (syntax error)
+2018-08-31 (Tomas Cejka): urfilter: cleanup - useless comment and coding style
+2018-08-23 (Tomas Jansky): natpair: buildfix - removed debugging fragment
+2018-08-23 (Tomas Jansky): natpair: fixed bug when the main thread ended prematurely
+2018-08-23 (Tomas Jansky): natpair: final adjustements in documentation
+2018-08-23 (Tomas Jansky): natpair: removed trailing whitespaces
+2018-08-23 (Tomas Jansky): natpair: added documentation
+2018-08-14 (Michal Slabihoudek): Hotfix: Using of incorrect ur_template.
+
+2018-08-03 (Tomas Cejka): rpm: fixed dependency on libcurl-devel
+2018-08-03 (Filip Křesťan): New module Blooming history (#83)
+
+2018-07-27 (Jaroslav Hlavac): Documentation improvement, usage examples, checking return values in unirecfilter.c + Anonymizer.c bugfix (#82)
+2018-07-23 (tomasmax95): Add pdns_exporter module for exporting flow data to json for Passive DNS (#79)
+2018-07-23 (Dominik Soukup): Mux,Demux: libtrap api bugfix
+2018-07-23 (Dominik Soukup): Mux,Demux: libtrap api bugfix
+2018-07-23 (Tomas Jansky): scalar-agregator: added explaining comments
+2018-07-22 (Václav Bartoš): vportscan/haddrscan2idea: AggrWin can be set by parameter
+2018-07-19 (Tomas Jansky): unirecfilter: fixed possible pointer dereferencing and resource leak (coverity issues)
+2018-07-19 (Tomas Jansky): scalar_aggregator: code refactoring, fixed multiple memory leaks and possible segfaults (8 coverity issues)
+2018-07-19 (Tomas Jansky): proto_traffic: added error output if send() fails, removed unnecessary semicolons
+2018-07-19 (Tomas Jansky): ipv6stats: fixed possible uinitialized values of stats->end_of_window (reported by coverity)
+2018-07-19 (Tomas Jansky): merger: removed unnecessary semicolons
+2018-07-19 (Tomas Jansky): endiverter: removed unnecessary semicolons around certain macros (fixed logical dead code signalled from coverity -- semicolon after macro)
+2018-07-19 (Václav Bartoš): json_dump: Improved exception handling
+2018-07-19 (Václav Bartoš): json_dump: Automatic flushing after each record
+2018-07-19 (Tomas Cejka): python modules: add link to IFCSPEC doc in the help (-h)
+2018-07-19 (Tomas Cejka): python modules: enable basic help
+Nemea-2.0:
+	* added new modules (see ChangeLog for the list)
+	* replaced "script" by Supervisor to control and monitor Nemea
+	* extended libnemea-common
+	* extended libunirec
+	* bugfixes of libtrap
+

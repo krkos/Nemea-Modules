@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# input data:
+in='
+H4sIAHepTFsAA42TW2rDMBBFDV1CNxD0XQaNRs9uxhgnNYFQG0tfcdyupXSjHTsQTPyo/ec7g+6Z
+O9JLNn6vRVW1p6pIp2Pe1G2KZfHJ8m/204nYlvm5Ee8HgeAhAAXxdhDHmFiNLHfCezCADhTxr5aS
+yzaAA/SgHEsKRy140KA9eHNv61lLMf84tzGxgtoYJNTKw9DdtHWqy/rCFXtvvBTTvoASSLmeMb+z
+for58FHPoI8B+BQyawBWgVL0P4JCJNA0Ityy6zwpLZ8BZrEsIxhpIOwBUAiBBv8+66b+jtgeNdit
+CPR6AoYJd/hLH8AjDgBf2W1xB3oDwKzeAWcZwOwhsLwC9AsEmmcAx16zJUwI7NYlcAH3EPCoxtIS
+geNnwRua30PNaENpOGWNAL3kB7UvAw6bsP8DnJpnVswDAAA=
+'
+
+# output data:
+out='
+H4sIAI0IM14AA+WWX2vbMBTF3/cpgp4noas/tuS3Lm2hL6UsYWMbZcjSdQhr7eC4HV3pd58sd20H
+C3FJ6MMCfpF9dXSs++NI92TqOlw07R0pJt/IR/RNzWbe1fWyXpDL9xNy3gTsv92To8Wi/bys44Bw
+XnBdcE5iwexzmnqO1+j68e2qabt1lPgesEPfNW3Smd+tkg45vWp+pnmd65brbund1bCQu+4LiP/F
+PK5r7FjdS7InPfLQl53cYt3Nl0Ot4JBRLijwOdgCeCHM11577toFdoPtswuV1jWGaQY5E7KvyCzL
+GRgm8n5kDVNMGWZ0snLRNl2TJnV+RS7TuqdNe+16SXJ2fHKU/nyKbo0brJhC8mRl2mLc4RdVtq/i
+eg6qiI8QqWrW3LQe/zYMzDDLpN1sKe7ktLmpe1fCch5fHact3+bp7Lj/qgTYyhtPjQKgytuSGp4B
+9a4KAUqVyyojSXPt2+WqWzap9x+uGv9j8qcpk5t1JGUyn15MZl/OycO7+/+KKCi42EjU9ga9ihkB
+hZY7MvMEshhFDUi9jZpnVwM1QuQSsxCoCt5QVWWalpmN/PBSCu+0wEr/g5pP2KbGTA4CGqU3QvMi
+ePaEjSg47CVqFB8XNbA1ap49DdDICkutjaQZqNBHjaTOc0sVBGFVjK4S1MFDwzdDs/+kEXZHZHIZ
+HYFi2bikUWOC5tHUwEwZuAVAoEFZEYMmaGqD41Q6G9BXEk1ZHjwzkL0hM3xvp5MaxYzenjNPpgZm
+jJNKGutppU0Vc8YY6kwVDyeblxohlMHzg2fmTW800uzIjNJMsDzaGnc4ZWNy5tHUwAw4VCZARRED
+xmuMM9SiVzSrvHdBcJRBHDYzPCsE38iMiv2JPYI95szOzOTJ0ehb8Bhm+EtmtMRQIngqrY3M6GjN
+eeQ0z2VW5sGUFcKrmfkNIefxUYwPAAA=
+'
+
+test -z "$srcdir" && export srcdir=.
+
+. $srcdir/../test.sh
+
+test_conversion "vportscan" "vportscan" "$in" "$out"
+

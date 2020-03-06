@@ -1,0 +1,61 @@
+.TH UNIRECFILTER "1" "March 2020" "2.13.1 unirecfilter" "User Commands"
+.SH NAME
+unirecfilter \- manual page for unirecfilter 2.13.1
+.SH SYNOPSIS
+.B unirecfilter
+[\fICOMMON\fR]... [\fIOPTIONS\fR]...
+.SH DESCRIPTION
+.TP
+Number of Input IFC: \fB1\fR
+..
+.TP
+Number of Output IFC: \fBvariable\fR
+..
+.TP
+This NEMEA module selects records according to parameters in filter and sends only fields specified in output template. Unirecfilter expects unirec format of messages on input. Output format is specified with -O flag, filter is specified with -F flag and contains expressions (<=, ==, &&, ...). You can also specify output format and filter in a FILE, which allows sending output to multiple interfaces. \n"    ,1,-1)
+.HP
+\fB\-O\fR, \fB\-\-unirec_out\fR
+Specify UniRec data format expected on the output interface. (UniRec data format example:\uint32 FOO
+.TP
+\fB\-F\fR, \fB\-\-filter\fR
+Specify filter.
+.TP
+\fB\-n\fR, \fB\-\-no_eof\fR
+Don't send 'EOF message' at the end.
+.TP
+\fB\-c\fR, \fB\-\-cut\fR
+Quit after N records are received.
+.TP
+\fB\-f\fR, \fB\-\-file\fR
+Read template and filter from file.
+.TP
+.SH COMMON OPTIONS:
+.TP
+\fB\-h\fR \fB[trap,1]\fR
+If no argument, print this message. If \fItrap\fR or 1 is given, print TRAP help.
+.TP
+\fB\-i\fR \fBIFC_SPEC\fR
+Specification of interface types and their parameters, see \fI\-h trap\fR (mandatory parameter).
+.TP
+\fB\-v\fR
+Be verbose.
+.TP
+\fB\-vv\fR
+Be more verbose.
+.TP
+\fB\-vvv\fR
+Be even more verbose.
+.SH ENVIRONMENT VARIABLES
+.TP
+\fBPAGER\fR
+Show the help output in the set \fBPAGER\fR.
+.TP
+\fBLIBTRAP_OUTPUT_FORMAT\fR
+If set to \fIjson\fR, information about module is printed in JSON format.
+.TP
+\fBTRAP_SOCKET_DIR\fR
+Redefines directory for UNIX sockets.
+.SH BUGS
+Please send problems, bugs, questions, desirable enhancements, patches etc. to:
+\fInemea@cesnet.cz\fR
+

@@ -1,0 +1,76 @@
+.TH AGG "1" "March 2020" "2.13.1 agg" "User Commands"
+.SH NAME
+agg \- manual page for agg 2.13.1
+.SH SYNOPSIS
+.B agg
+[\fICOMMON\fR]... [\fIOPTIONS\fR]...
+.SH DESCRIPTION
+.TP
+Number of Input IFC: \fB1\fR
+..
+.TP
+Number of Output IFC: \fB1\fR
+..
+.TP
+The module can aggregate UniRec records based on user-specified keys, aggregation functions and time interval. The input of this module is a (infinit) sequence of UniRec records. The output of this module is a sequence of aggregated UniRec records according to user settings.\n\nUser has to specify parameters for processing including key fields and applied aggregation function. User can specify aggregation functions by options listed below, all options may be used repeatedly. URFIELD stands for name of the UniRec field.\n\nModule can work with 3 different timeout types (Active, Passive, Global) or their combination (Mixed = Active,Passive).Module receives UniRec and sends UniRec containing the fields which take part in aggregation process.\n\nModule use in place aggregation, so only one aggregation function per field is possible. Only fields specified by user are part of output record, others are discarded. Please notice the field COUNT (count of aggregated records) is always inside output record.\n\nExample:\n Records aggregated by SRC_IP and DST_IP, making sum of BYTES and PACKETS and using first received value of SRC_PORT in output. Module can be run like this:\n  " BINDIR "/agg -i u:input,u:aggr -k SRC_IP -k DST_IP -s BYTES -s PACKETS -f SRC_PORT\n
+.HP
+\fB\-k\fR, \fB\-\-key\fR
+Defines received UniRec field name as part of aggregation key. \
+.TP
+\fB\-l\fR, \fB\-\-last\fR
+Keep first value of UniRec field identified by given name.
+.TP
+\fB\-m\fR, \fB\-\-min\fR
+Keep minimal value of UniRec field identified by given name.
+.TP
+\fB\-n\fR, \fB\-\-and\fR
+Make bitwise AND of UniRec field identified by given name.
+.TP
+\fB\-a\fR, \fB\-\-avg\fR
+Makes average of UniRec field values identified by given name.
+.TP
+\fB\-o\fR, \fB\-\-or\fR
+Make bitwise OR of UniRec field identified by given name.
+.TP
+\fB\-f\fR, \fB\-\-first\fR
+Keep first value of UniRec field identified by given name.
+.TP
+\fB\-s\fR, \fB\-\-sum\fR
+Makes sum of UniRec field values identified by given name.
+.TP
+\fB\-M\fR, \fB\-\-max\fR
+Keep maximal value of UniRec field identified by given name.
+.TP
+\fB\-t\fR, \fB\-\-time_window\fR
+Represents type of timeout and #seconds for given type before sending  \
+.TP
+.SH COMMON OPTIONS:
+.TP
+\fB\-h\fR \fB[trap,1]\fR
+If no argument, print this message. If \fItrap\fR or 1 is given, print TRAP help.
+.TP
+\fB\-i\fR \fBIFC_SPEC\fR
+Specification of interface types and their parameters, see \fI\-h trap\fR (mandatory parameter).
+.TP
+\fB\-v\fR
+Be verbose.
+.TP
+\fB\-vv\fR
+Be more verbose.
+.TP
+\fB\-vvv\fR
+Be even more verbose.
+.SH ENVIRONMENT VARIABLES
+.TP
+\fBPAGER\fR
+Show the help output in the set \fBPAGER\fR.
+.TP
+\fBLIBTRAP_OUTPUT_FORMAT\fR
+If set to \fIjson\fR, information about module is printed in JSON format.
+.TP
+\fBTRAP_SOCKET_DIR\fR
+Redefines directory for UNIX sockets.
+.SH BUGS
+Please send problems, bugs, questions, desirable enhancements, patches etc. to:
+\fInemea@cesnet.cz\fR
+
